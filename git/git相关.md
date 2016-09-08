@@ -1,5 +1,7 @@
 # git入门教程
-[廖雪峰](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)  
+[廖雪峰](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
+
+[贝格乐Backlog](http://backlogtool.com/git-guide/cn/intro/intro1_1.html)
 
 # 提交规范
 [阮一峰](http://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)  
