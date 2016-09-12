@@ -2,7 +2,10 @@
 
 深度学习JavaScript，仔细掌握作用域、原型、闭包等概念。
 
-### 参考资料
+### 深入理解javascript原型和闭包系列
+* [王福朋](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
+
+### 系列资料资料汇总
 
 * [鸟哥：Javascript作用域原理](http://www.laruence.com/2009/05/28/863.html)
 * [理解 JavaScript 作用域和作用域链](http://www.cnblogs.com/lhb25/archive/2011/09/06/javascript-scope-chain.html)
