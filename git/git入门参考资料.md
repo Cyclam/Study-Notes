@@ -12,3 +12,6 @@
 # github入门到上传本地项目参考文（一）
 [http://www.cnblogs.com/specter45/p/github.html](http://www.cnblogs.com/specter45/p/github.html)
 
+# github客户端的使用
+[http://www.cocoachina.com/ios/20160212/15024.html?ref=myread](http://www.cocoachina.com/ios/20160212/15024.html?ref=myread)
+
