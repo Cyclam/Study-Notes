@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遮罩</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="nav" id="target">
+		<ul class="nav-bar">
+			<li class="item">HOME</li>
+			<li class="item">ABOUT</li>
+			<li class="item">SCHOOL</li>
+			<li class="item">BLOG</li>
+			<li class="item">COMPONY</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		//getBoundingClientRect()获取某元素的位置属性
+		//getComputedStyle()方法获取CSS属性值
+		function mask(elem,opacity) {
+			var rect = elem.getBoundingClientRect();
+			var style = getComputedStyle(elem,null);
+
+			var mask = document.createElement('div');//创建遮罩层
+			mask.style.position = 'absolute';
+			mask.style.background = 'rgba(0,0,0,0.4)';
+			mask.style.zIndex = 9999;
+			mask.style.width = 80+'px';
+			mask.style.height = 300+'px';
+			target.appendChild(mask);
+		};
+		var target = document.getElementById('target');
+		target.addEventListener('click', function() {
+			console.log('clicked')
+		});
+		mask(target);
+	</script>
+</body>
+</html>
