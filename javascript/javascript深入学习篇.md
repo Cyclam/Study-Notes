@@ -5,6 +5,12 @@
 ### 深入理解javascript原型和闭包系列
 * [王福朋](http://www.cnblogs.com/wangfupeng1988/p/4001284.html)
 
+### js构造函数的方法与原型prototype(前端开发博客)
+* [http://caibaojian.com/js-constructor-vs-prototype.html](http://caibaojian.com/js-constructor-vs-prototype.html)
+
+### JavaScript原型详解（掘金）
+*[http://gold.xitu.io/post/57f336a9816dfa00568f300c?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com](http://gold.xitu.io/post/57f336a9816dfa00568f300c?utm_medium=hao.caibaojian.com&utm_source=hao.caibaojian.com)
+
 ### 系列资料资料汇总
 
 * [鸟哥：Javascript作用域原理](http://www.laruence.com/2009/05/28/863.html)
