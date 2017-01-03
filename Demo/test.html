@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组去重(一)</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var foo = 1;
+        function bar() {
+            foo = 10;
+            return;
+            function foo() {};//函数声明变量提升
+        }
+        bar();
+        console.log(foo);
+        
+        //相当于下面的写法
+        var foo = 1;
+        function bar() {
+            var foo = function foo() {};
+            foo = 10;
+            return;
+        }
+        bar();
+        console.log(foo);
+	</script>
+</body>
+</html>
