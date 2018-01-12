@@ -5,6 +5,9 @@ tags: git
 toc: true
 categories: git
 ---
+
+### git常用命令
+
 ### 什么是git?
 
 git是分布式版本控制系统，可以记录修改的动作及多人协作，方便文件的管理。  
@@ -106,5 +109,3 @@ git rm （从版本库中删除），并且git commit
 提交了删除操作，版本库就没有 test.txt 文件了，不能用 git checkout 撤销，要找回只能退回版本号。
 
 * git checkout主要是针对工作区的操作，前提是你没有提交操作到版本库，也就是没有执行命令 git commit -m 'test.txt'。 
-
-#### 远程仓库

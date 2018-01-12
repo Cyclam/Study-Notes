@@ -2,7 +2,7 @@
 
 上班两天，感受到充满极客的味道，虽然对周围的同事不是特别的熟悉，但上班第一天的时候还是能感受到各位同事的热情欢迎。废话不多说，在这里记录一下上班这两天的主要工作。
 
-### 搭建前端开发环境
+#### 搭建前端开发环境
 
 刚来的第一天，主要围绕前端开发环境的搭建，主要安装的一下环境依赖有：
 
@@ -56,37 +56,37 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 
 ```
 {
-    "PHP": {
-        "php": '/usr/bin/php',
-        "phpExtraPaths": [],
-        "phpConfigFile": 'php.ini'
-    },
-    "JavaScript": {
-        "javascriptExtraPaths": []
-    },
-    "Perl": {
-        "perl": "/usr/bin/perl",
-        "perlExtraPaths": []
-    },
-    "Ruby": {
-        "ruby": "/usr/bin/ruby",
-        "rubyExtraPaths": []
-    },
-    "Python": {
-        "python": '/usr/bin/python',
-        "pythonExtraPaths": []
-    },
-    "Python3": {
-        "python": '/usr/bin/python3',
-        "pythonExtraPaths": []
-    }
+  "PHP": {
+    "php": '/usr/bin/php',
+    "phpExtraPaths": [],
+    "phpConfigFile": 'php.ini'
+  },
+  "JavaScript": {
+    "javascriptExtraPaths": []
+  },
+  "Perl": {
+    "perl": "/usr/bin/perl",
+    "perlExtraPaths": []
+  },
+  "Ruby": {
+    "ruby": "/usr/bin/ruby",
+    "rubyExtraPaths": []
+  },
+  "Python": {
+    "python": '/usr/bin/python',
+    "pythonExtraPaths": []
+  },
+  "Python3": {
+    "python": '/usr/bin/python3',
+    "pythonExtraPaths": []
+  }
 }
 ```
 5. Sublime-HTMLPrettify(代码排版插件，安装完按快捷键ctrl+shift+h 一键格式化代码)
 6. Autoprefixer(CSS3前缀补充插件，使用方法：在输入CSS3属性后按Tab键)
 7. AutoFileName(文件路径自动提示)
 8. SublimeLinter(安装完这个插件，还需要独立安装组件)
-##### JavaScript 语法检查
+#### JavaScript 语法检查
 - 安装 SublimeLinter-jshint
 为了让 JavaScript 代码有语法检查，我们安装`SublimeLinter-jshint `
 同样的方法，我们安装 SublimeLinter-jshint
@@ -96,15 +96,17 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 - 在插件开始工作之前，我们必须再看一下上述插件的安装说明，通过 SublimeLinter-jshint 的说明 我们可以看到，这个组件依赖于 nodeJS 下的 jshint，所以我们安装 nodeJS 环境和 nodeJS 下的 jshint。1. 安装 Node.js  2. 通过 npm 安装jshint
 - 在命令行下输入如下代码，完成安装`npm install -g jshint`
 
-##### css 语法检查
+#### css 语法检查
 - 安装 SublimeLinter-csslint
 - 同样的方法，输入`SublimeLinter-csslint`。进行安装.
 - 在命令行中输入`npm install -g csslint`
 > 参考文档：[代码校验工具 SublimeLinter 的安装与使用](https://gaohaoyang.github.io/2015/03/26/sublimeLinter/)
 
 ### 搭建好环境后熟悉业务流程
+
 #### 使用fiddlers抓包工具
-测试环境下，使用抓包工具，截取网络资源，使用本地修改的静态资源替换
+测试环境下，使用抓包工具，截取网络资源，使用本地修改的静态资源替换  
+https协议需要安装证书
 
 #### SwitchyOmega代理工具
 配置选项

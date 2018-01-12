@@ -1,10 +1,8 @@
 ### 收集一些前端资源
-
-
-### Git相关
+#### Git相关
 
 `git init`
-`git commit -m 'stumansys'
+`git commit -m 'stumansys`
 `git remote add origin https://github.com/Flowerowl/stumansys.git`
 `git push origin master`
 如果执行git remote add origin https://github.com/Flowerowl/stumansys.git`
