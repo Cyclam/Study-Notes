@@ -104,9 +104,42 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 
 ### 搭建好环境后熟悉业务流程
 
-#### 使用fiddlers抓包工具
+### 使用Fiddlers或者Charles抓包工具
 测试环境下，使用抓包工具，截取网络资源，使用本地修改的静态资源替换  
 https协议需要安装证书
 
-#### SwitchyOmega代理工具
+### windows下使用Fiddlers
+### mac下使用Charles
+
+### SwitchyOmega代理工具
 配置选项
+
+### 使用Mac有关的命令操作
+
+#### 显示隐藏文件
+
+1. 在Finder下使用 Command+Shift+. 可以显示隐藏文件、文件夹，再按一次，恢复隐藏；
+finder下使用Command+Shift+G 可以前往任何文件夹，包括隐藏文件夹。
+2. 在终端下  
+显示全部文件
+defaults write com.apple.finder AppleShowAllFiles -bool true
+osascript -e 'tell application "Finder" to quit'
+
+不显示全部文件
+defaults write com.apple.finder AppleShowAllFiles -bool false
+osascript -e 'tell application "Finder" to quit'
+
+#### mac关闭占用端口
+
+查找被占用的8080端口
+sudo lsof -i :8080
+然后根据PID杀进程：
+sudo kill -9 61342（即pid）
+
+### SSH终端链接工具
+1. 使用Finalshell
+Mac一键安装脚本
+curl -o finalshell_install.sh www.hostbuf.com/downloads/finalshell_install.sh;
+chmod +x finalshell_install.sh; 
+使用sudo ./finalshell_install.sh启动服务
+2. 使用Xshell
