@@ -79,10 +79,10 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 
 ##### VS Code
 
-1. One Dark Pro主题(目前一直在用的主题🌟)
+1. One Dark Pro主题(目前一直在用的主题🌟)
 2. GitLens 🌟
 3. ESlint 🌟
-3. Prettier Code formatter(格式化工具🌟)
+3. Prettier Code formatter(格式化工具🌟)
 4. Pug(Jade) snippets
 5. Vetur(vue代码高亮🌟)
 6. Bookmarks(Mark lines and jump to them 快捷键切换: cmd + alt + k 🌟)
