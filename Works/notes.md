@@ -19,7 +19,7 @@
 `$ ssh-keygen -t rsa -C "youremail@your.com" -f ~/.ssh/id_rsa`
 
 2. 生成一个gitlab用的SSH-Key
-`$ ssh-keygen -t rsa -C "youremail@yourcompany.com" -f ~/.ssh/gitlab_rsa`  在`~/.ssh/`目录会生成github-rsa和github-rsa.pub私钥和公钥。 我们将github-rsa.pub中的内容粘帖到github / gitlab服务器的SSH-key的配置中。
+`$ ssh-keygen -t rsa -C "youremail@yourcompany.com" -f ~/.ssh/gitlab_rsa`  在`~/.ssh/`目录会生成github-rsa私钥和github-rsa.pub和公钥。 我们将github-rsa.pub中的内容粘帖到github / gitlab服务器的SSH-key的配置中。
 
 3. 在 ~/.ssh 目录下新建一个config文件
 `touch config`
@@ -41,7 +41,7 @@ Host github.com
 
 4. 测试
 `$ ssh -T git@github.com`
-输出：Hi bonzstars! You've successfully authenticated, but GitHub does not provide shell access.
+输出：Hi Yusingz! You've successfully authenticated, but GitHub does not provide shell access.
 表示成功连接上github了，连接gitlab也是一样的，你可以在gitlab上新建一个test测试项目，然后自己测试看看是否成功。
  
 #### 编辑器
@@ -145,3 +145,11 @@ sudo kill -9 61342（即pid）
 - chmod +x finalshell_install.sh  
 - 使用sudo ./finalshell_install.sh启动服务  
 2. 使用Xshell  
+
+### MySQL 数据库
+#### Workbench 常用快捷键
+- 新建tab(new tab) ctrl+t
+- 执行当前语句(execute current statement) ctrl+enter
+- 执行全部或选中的语句(execute all or selection) ctrl+shift+enter
+- 查看执行计划(explain current statement) ctrl+alt+x
+- 注释 --加空格，如 –- select * from table 或者直接在执行语句前面加 `#` 加空格 即可
