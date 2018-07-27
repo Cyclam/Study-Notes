@@ -138,6 +138,10 @@ sudo lsof -i :8080
 然后根据PID杀进程：  
 sudo kill -9 61342（即pid）
 
+### Linux查看并关闭端口占用
+1. 查看端口情况：netstat -anp
+2. 关闭端口占用：kill -9 PID" (PID：进程号)
+
 ### SSH终端连接工具
 1. 使用Finalshell  
 - Mac一键安装脚本  
