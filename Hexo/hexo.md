@@ -28,7 +28,3 @@ Hexo基本常用的命令就四个，而且还可以使用组合命令。基本�
 
 `hexo s -g  #等同先输入hexo g，再输入hexo s`
 `hexo d -g  #等同先输入hexo g，再输入hexo d`
-
-文／起今知行（简书作者）
-原文链接：http://www.jianshu.com/p/cc8654b61bd4
-著作权归作者所有，转载请联系作者获得授权，并标注“简书作者”。
