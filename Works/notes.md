@@ -136,6 +136,13 @@ sudo lsof -i :8080
 然后根据PID杀进程：
 sudo kill -9 61342（即pid）
 
+### windows关闭占用端口
+根据端口号查找pid  
+netstat -ano | findstr 3000
+
+关闭进程
+taskkill -pid 12972
+
 ### SSH终端链接工具
 1. 使用Finalshell
 Mac一键安装脚本
