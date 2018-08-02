@@ -132,11 +132,16 @@ defaults write com.apple.finder AppleShowAllFiles -bool false
 osascript -e 'tell application "Finder" to quit'
 
 #### Mac关闭占用端口
-
 查找被占用的8080端口  
 sudo lsof -i :8080  
 然后根据PID杀进程：  
 sudo kill -9 61342（即pid）
+
+### Windows关闭占用端口
+根据端口号查找pid  
+netstat -ano | findstr 3000
+关闭进程
+taskkill -pid 12972
 
 ### Linux查看并关闭端口占用
 1. 查看端口情况：netstat -anp
@@ -161,6 +166,14 @@ JENKINS_GROUP=root
 4.验证 
 在Jenkins中的shell脚本中执行命令
 `whoami`
+
+### SSH终端链接工具
+1. 使用Finalshell
+Mac一键安装脚本
+curl -o finalshell_install.sh www.hostbuf.com/downloads/finalshell_install.sh;
+chmod +x finalshell_install.sh; 
+使用sudo ./finalshell_install.sh启动服务
+2. 使用Xshell
 
 ### SSH终端连接工具
 1. 使用Finalshell  
