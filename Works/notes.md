@@ -142,6 +142,26 @@ sudo kill -9 61342（即pid）
 1. 查看端口情况：netstat -anp
 2. 关闭端口占用：kill -9 PID" (PID：进程号)
 
+### Centos 6给Jenkins使用root权限执行脚本
+1.将jenkins账号分别加入到root组中
+
+`gpasswd -a root jenkins`
+
+2.修改/etc/sysconfig/jenkins文件中，
+
+\# user id to be invoked as (otherwise will run as root; not wise!)
+JENKINS_USER=root
+JENKINS_GROUP=root
+
+可以修改为root权限运行
+
+3.重启Jenkins
+`service Jenkins restart`
+
+4.验证 
+在Jenkins中的shell脚本中执行命令
+`whoami`
+
 ### SSH终端连接工具
 1. 使用Finalshell  
 - Mac一键安装脚本  
