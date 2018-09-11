@@ -189,4 +189,4 @@ chmod +x finalshell_install.sh;
 - 执行当前语句(execute current statement) ctrl+enter
 - 执行全部或选中的语句(execute all or selection) ctrl+shift+enter
 - 查看执行计划(explain current statement) ctrl+alt+x
-- 注释 --加空格，如 –- select * from table 或者直接在执行语句前面加 `#` 加空格 即可
+- 注释 --加空格，如 –- select * from table 或者直接在执行语句前面加`#`加空格即可
