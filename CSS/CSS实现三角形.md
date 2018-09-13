@@ -92,3 +92,30 @@
   }
 }
 ```
+
+```css
+<span class="Popover-arrow Popover-arrow--bottom"></span>
+.Popover-arrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+}
+.Popover-arrow,
+.Popover-arrow:after {
+  border: 8px solid transparent;
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.Popover-arrow--bottom {
+  border-bottom-color: #ebebeb;
+  margin-top: 2px;
+}
+.Popover-arrow--bottom,
+.Popover-arrow--bottom:after {
+  border-top-width: 0;
+  transform: translateX(-50%);
+}
+```
