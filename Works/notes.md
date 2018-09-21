@@ -167,21 +167,13 @@ JENKINS_GROUP=root
 在Jenkins中的shell脚本中执行命令
 `whoami`
 
-### SSH终端链接工具
-1. 使用Finalshell
-Mac一键安装脚本
-curl -o finalshell_install.sh www.hostbuf.com/downloads/finalshell_install.sh;
-chmod +x finalshell_install.sh; 
-使用sudo ./finalshell_install.sh启动服务
-2. 使用Xshell
-
 ### SSH终端连接工具
 1. 使用Finalshell  
 - Mac一键安装脚本  
 - curl -o finalshell_install.sh www.hostbuf.com/downloads/finalshell_install.sh  
 - chmod +x finalshell_install.sh  
 - 使用sudo ./finalshell_install.sh启动服务  
-2. 使用Xshell  
+2. 使用Xshell
 
 ### MySQL 数据库
 #### Workbench 常用快捷键
