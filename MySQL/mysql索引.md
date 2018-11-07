@@ -49,12 +49,12 @@ ALTER TABLE table_name ADD INDEX index_name ON (column(length))
 ALTER TABLE `user` ADD INDEX index_name (name)
 -- –创建表的时候同时创建索引
 CREATE TABLE `user` (
-    `id` int(11) NOT NULL AUTO_INCREMENT ,
-    `title` char(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
-    `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
-    `time` int(10) NULL DEFAULT NULL ,
-    PRIMARY KEY (`id`),
-    INDEX index_name (title(length)) // 普通索引
+  `id` int(11) NOT NULL AUTO_INCREMENT ,
+  `title` char(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL ,
+  `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NULL ,
+  `time` int(10) NULL DEFAULT NULL ,
+  PRIMARY KEY (`id`),
+  INDEX index_name (title(length)) // 普通索引
 )
 -- –删除索引
 DROP INDEX index_name ON table
