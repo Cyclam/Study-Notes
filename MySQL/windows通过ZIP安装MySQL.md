@@ -49,3 +49,7 @@ port=3306
 `winpty mysql -u root -p`
 - 修改密码：`set password for root@localhost = password('123456')`或者
 `update user set password=password(”xueok654123″) where user=’root’`
+
+### MAC OS mysql命令无效
+
+在`.bash_profile`添加环境变量`export PATH="$PATH:/usr/local/mysql/bin`
