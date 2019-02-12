@@ -22,7 +22,7 @@ func (b *Banana) eat() {
 }
 
 type Fruit struct {
-	Banana
+	Banana // 匿名类型
 	Apple *Apple
 	name string
 }
