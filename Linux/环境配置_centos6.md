@@ -8,6 +8,8 @@
 => Appending bash_completion source string to /root/.bashrc
 => Close and reopen your terminal to start using nvm or run the following to use it now:
 
+之后激活nvm: `source ~/.nvm/nvm.sh`
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -71,22 +73,6 @@ strongly recommended for production servers.
 ### 安装Ruby
 
 ### 安装Golang
-
-### Nginx
-
-- 列出所有端口`netstat -ntlp`
-- 查看开放的端口`service iptables status`
-
-#### 开放端口
-在`/etc/sysconfig/iptables`添加`-A INPUT -p tcp -m state --state NEW -m tcp --dport <port_num> -j ACCEPT `
-然后**重启防火墙**`service iptables restart`即可
-
-### 基本操作命令
-- nginx 启动
-- nginx -s reload 重启
-- nginx -s stop 关闭
-- nginx -t   #查看nginx配置是否正确  也可以切换到nginx的安装目录下的sbin目录下，执行: ./nginx -t
-- ps -ef | grep nginx  #查看nginx端口
 
 ### 熟悉curl、yum命令
 
