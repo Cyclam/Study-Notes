@@ -70,13 +70,13 @@ databases and anonymous user created by default.  This is
 strongly recommended for production servers.
 ```
 
-### 安装Ruby
+## 安装Ruby
 
-### 安装Golang
+## 安装Golang
 
-### 熟悉curl、yum命令
+## 熟悉curl、yum命令
 
-### 安装SSL证书
+## 安装SSL证书
 
 [使用certbot更方便](https://certbot.eff.org/lets-encrypt/centosrhel7-nginx)
 

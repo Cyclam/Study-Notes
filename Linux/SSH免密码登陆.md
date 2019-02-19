@@ -25,3 +25,14 @@ $ chmod 600 id_rsa
 `ssh-copy-id [-i [identity_file]] [user@]machine` -i 指定公钥文件
 
 实例：`ssh-copy-id -i ~/.ssh/id_rsa.pub user@server`
+
+## ssh别名登录
+
+`$ vi ~/.ssh/config`添加以下内容即可通过 `ssh vultr`登录
+```shell
+Host vultr
+  HostName 45.xx.xx.xx
+  User root
+  #PreferredAuthentications publickey
+  IdentityFile ~/.ssh/id_rsa
+```
