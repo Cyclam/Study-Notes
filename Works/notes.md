@@ -110,6 +110,7 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 ### 使用Fiddlers或者Charles抓包工具
 测试环境下，使用抓包工具，截取网络资源，使用本地修改的静态资源替换  
 https协议需要安装证书
+[Charles从入门到精通](https://blog.devtang.com/2015/11/14/charles-introduction/)
 
 ### windows下使用Fiddlers
 ### mac下使用Charles
@@ -120,8 +121,8 @@ https协议需要安装证书
 ### 使用Mac有关的命令操作
 #### 显示隐藏文件
 
-- 在Finder下使用 Command+Shift+. 可以显示隐藏文件、文件夹，再按一次，恢复隐藏；  
-finder下使用Command+Shift+G 可以前往任何文件夹，包括隐藏文件夹。
+- 在Finder下使用 Command + Shift + . 可以显示隐藏文件、文件夹，再按一次，恢复隐藏；  
+finder下使用Command + Shift + G 可以前往任何文件夹，包括隐藏文件夹。
 - 在终端下  
 显示全部文件  
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -130,22 +131,6 @@ osascript -e 'tell application "Finder" to quit'
 不显示全部文件  
 defaults write com.apple.finder AppleShowAllFiles -bool false
 osascript -e 'tell application "Finder" to quit'
-
-#### Mac关闭占用端口
-查找被占用的8080端口  
-sudo lsof -i :8080  
-然后根据PID杀进程：  
-sudo kill -9 61342（即pid）
-
-### Windows关闭占用端口
-根据端口号查找pid  
-netstat -ano | findstr 3000
-关闭进程
-taskkill -pid 12972
-
-### Linux查看并关闭端口占用
-1. 查看端口情况：netstat -anp
-2. 关闭端口占用：kill -9 PID" (PID：进程号)
 
 ### Centos 6给Jenkins使用root权限执行脚本
 1.将jenkins账号分别加入到root组中
