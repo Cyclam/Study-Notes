@@ -11,7 +11,8 @@
 - gulp(全局安装：cnpm install gulp -g)
 - grunt(公司以前配置好的自动化构建工具，现在还在用，所以自己还是得装上)
 - git(这个是必须的，第一次用git的时候我们需要做一些用户信息的配置：
-要配置的是你个人的用户名称和电子邮件地址。这两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录：`$ git config --global user.name "John Doe"`
+要配置的是你个人的用户名称和电子邮件地址。这两条配置很重要，每次 Git 提交时都会引用这两条信息，说明是谁提交了更新，所以会随更新内容一起被永久纳入历史记录：  
+`$ git config --global user.name "John Doe"`
 `$ git config --global user.email johndoe@example.com`)
 - gitlab(公司用的代码仓库，如果同一部电脑有用到github和github的话，需要在git上作一些相应的配置)
 生产两个SSH-Key，一个用于公司gitlab的，一个用于自己github上的。
@@ -19,7 +20,8 @@
 `$ ssh-keygen -t rsa -C "youremail@your.com" -f ~/.ssh/id_rsa`
 
 2. 生成一个gitlab用的SSH-Key
-`$ ssh-keygen -t rsa -C "youremail@yourcompany.com" -f ~/.ssh/gitlab_rsa`  在`~/.ssh/`目录会生成github-rsa私钥和github-rsa.pub和公钥。 我们将github-rsa.pub中的内容粘帖到github / gitlab服务器的SSH-key的配置中。
+`$ ssh-keygen -t rsa -C "youremail@yourcompany.com" -f ~/.ssh/gitlab_rsa`  
+在`~/.ssh/`目录会生成github-rsa私钥和github-rsa.pub和公钥。 我们将github-rsa.pub中的内容粘帖到github / gitlab服务器的SSH-key的配置中。
 
 3. 在 ~/.ssh 目录下新建一个config文件
 `touch config`
@@ -44,8 +46,8 @@ Host github.com
 输出：Hi Yusingz! You've successfully authenticated, but GitHub does not provide shell access.
 表示成功连接上github了，连接gitlab也是一样的，你可以在gitlab上新建一个test测试项目，然后自己测试看看是否成功。
  
-#### 编辑器
-##### Sublime Text
+### 编辑器（推荐使用VS Code）
+#### Sublime Text
 
 首先是安装包管理器Package Control，SublimeText3的指令已经更新了，SublimeText2更新上来的童鞋注意下 
 Ctrl+`打开控制台或者View->Show Console菜单打开命令行
@@ -87,7 +89,9 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 5. Vetur(vue代码高亮🌟)
 6. Bookmarks(Mark lines and jump to them 快捷键切换: cmd + alt + k 🌟)
 7. Vscode-fileheader(生成文件头注释 自动更新修改时间🌟)
+
 #### JavaScript 语法检查
+
 - 安装 SublimeLinter-jshint
 为了让 JavaScript 代码有语法检查，我们安装`SublimeLinter-jshint `  
 同样的方法，我们安装 SublimeLinter-jshint  
@@ -99,23 +103,24 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 2. 通过 npm 安装jshint
 - 在命令行下输入如下代码，完成安装`npm install -g jshint`
 
-#### css 语法检查
+#### CSS 语法检查
+
 - 安装 SublimeLinter-csslint
 - 同样的方法，输入`SublimeLinter-csslint`。进行安装.
 - 在命令行中输入`npm install -g csslint`
 > 参考文档：[代码校验工具 SublimeLinter 的安装与使用](https://gaohaoyang.github.io/2015/03/26/sublimeLinter/)
 
-### 搭建好环境后熟悉业务流程
+#### 搭建好环境后熟悉业务流程
 
-### 使用Fiddlers或者Charles抓包工具
+#### 使用Fiddlers或者Charles抓包工具
 测试环境下，使用抓包工具，截取网络资源，使用本地修改的静态资源替换  
 https协议需要安装证书
 [Charles从入门到精通](https://blog.devtang.com/2015/11/14/charles-introduction/)
 
-### windows下使用Fiddlers
-### mac下使用Charles
+#### windows下使用Fiddlers
+#### mac下使用Charles
 
-### SwitchyOmega代理工具
+#### SwitchyOmega代理工具
 配置选项
 
 ### 使用Mac有关的命令操作
@@ -123,14 +128,17 @@ https协议需要安装证书
 
 - 在Finder下使用 Command + Shift + . 可以显示隐藏文件、文件夹，再按一次，恢复隐藏；  
 finder下使用Command + Shift + G 可以前往任何文件夹，包括隐藏文件夹。
-- 在终端下  
-显示全部文件  
+
+- 在终端下显示全部文件
 defaults write com.apple.finder AppleShowAllFiles -bool true
 osascript -e 'tell application "Finder" to quit'
 
-不显示全部文件  
+- 不显示全部文件  
 defaults write com.apple.finder AppleShowAllFiles -bool false
 osascript -e 'tell application "Finder" to quit'
+
+- 剪切快捷键
+Command + C 复制，然后使用 Command + Alt + V 剪切到相应目录
 
 ### Centos 6给Jenkins使用root权限执行脚本
 1.将jenkins账号分别加入到root组中
