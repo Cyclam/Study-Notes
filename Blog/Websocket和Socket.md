@@ -1,0 +1,8 @@
+Socket与WebSocket处于的网络层级是不对等的，很难直接比较。WebSocket在网络七层协议上的层级等同于Http，而Socket位置处于七层协议中的第四层，Socket是操作系统对TCP、UDP的封装。WebSocket处在上层，Socket处在下层，WebSocket依赖于Socket，Socket为WebSocket服务。
+
+那么应该是拿WebSocket与Http进行比较。WebSocket常见于**客户端-服务端全双工**的场景，客户端可以发送消息给服务端，同时服务端也可以主动发送消息给客户端。而Http是单向的关系。只能客户端发送请求，服务端被动接收，服务端没有主动发起对话的能力。
+
+聊天是一个典型的全双工场景：聊天的双方先将消息发送给服务端，服务端在把消息转给对方。如果使用WebSocket，得益于全双工，整个逻辑非常顺畅。而Http场景下，服务端没有主动发起请求的能力，只能维持Http长链接，或者客户端定时轮询服务端，获取最新的信息。
+
+可以把WebSocket想象成HTTP，HTTP和Socket什么关系，WebSocket和Socket就是什么关系。
+Socket是一个便于使用 TCP/UDP 的接口规范，WebSocket是一个应用层协议。
