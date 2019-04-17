@@ -1,7 +1,7 @@
 ### 定义基础变量
 
 #### 混合
-```
+```css
 在 LESS 中我们可以定义一些通用的属性集为一个class，然后在另一个class中去调用这些属性. 下面有这样一个class:
 
 .bordered {
@@ -21,7 +21,8 @@
 ```
 
 #### 带参数混合
-```
+
+```css
 .border-radius (@radius) {
   border-radius: @radius;
   -moz-border-radius: @radius;
@@ -40,7 +41,6 @@
   -moz-border-radius: @radius;
   -webkit-border-radius: @radius;
 }
-```
 
 @arguments 变量
 @arguments包含了所有传递进来的参数. 如果你不想单独处理每一个参数的话就可以像这样写:
@@ -51,3 +51,4 @@
   -webkit-box-shadow: @arguments;
 }
 .box-shadow(2px, 5px);
+```

@@ -3,7 +3,8 @@
 $highlight-color: #49d;
 
 与CSS属性不同，变量可以在css规则块定义之外存在。当变量定义在css规则块内，那么该变量只能在此规则块内使用。如果它们出现在任何形式的{...}块中（如@media或者@font-face块），情况也是如此：
-```
+
+```css
 $nav-color: #F90;
 nav {
   $width: 100px;
@@ -26,7 +27,8 @@ nav {
 `article ~ article { border-top: 1px dashed #ccc }`
 
 #### 嵌套属性
-```
+
+```css
 nav {
   border: {
   style: solid;
@@ -44,7 +46,8 @@ nav {
 ```
 
 #### 混合器
-```
+
+```css
 @mixin rounded-corners {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;

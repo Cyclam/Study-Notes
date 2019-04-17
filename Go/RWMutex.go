@@ -26,15 +26,18 @@ func main() {
   //   write(2)
   //   read(3)
   // }()
-  time.Sleep(5 * time.Second)
+  time.Sleep(2 * time.Second)
+  // 可能的输出结果：
+  // 1:0 2:10 3:10
+  // 1:0 3:0 2:10
 }
 
 func read(i int) {
   // 读锁 读取val的数据，数据不可写
   m.RLock()
-  time.Sleep(1 * time.Second)
+  // time.Sleep(1 * time.Second)
   fmt.Println(i, val)
-  time.Sleep(1 * time.Second)
+  // time.Sleep(1 * time.Second)
   // println("val: ", val)
   m.RUnlock()
 }
@@ -43,7 +46,7 @@ func write(i int) {
   // 写锁
 	m.Lock()
   val = 10
-  time.Sleep(1 * time.Second)
+  // time.Sleep(1 * time.Second)
   fmt.Println(i, val)
 	m.Unlock()
 }
