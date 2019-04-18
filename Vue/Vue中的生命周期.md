@@ -9,7 +9,7 @@ vue实例初始化，此时无法获取data中的数据和methods中的方法
 此时data中的数据已经初始化完毕，可以对data中的数据进行修改，但$el还没有，此时还是虚拟的DOM结构
 
 3. beforeMounted
-在挂载vue实例之前
+在DOM挂载vue实例之前
 
 4. mounted
 
@@ -27,3 +27,12 @@ data中的数据、DOM结构更新完毕
 
 8. destroyed
 vue实例被销毁后调用，调用后，vue实例所绑定的数据会被解除，事件监听会被移除，所有的子实例也会被销毁。
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
+
+在初始化的最后，检测到如果有 el 属性，则调用 vm.$mount 方法挂载 vm，挂载的目标就是把模板渲染成最终的 DOM
