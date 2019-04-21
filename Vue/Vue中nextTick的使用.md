@@ -12,11 +12,23 @@
 
 
 ### Vue中的生命周期
-- beforeCreate 在实例初始化，数据观测(data observer)和event/watcher时间配置之前被调用
-- created 实例已经被创建完成之后被调用。在这一步，实例已完成以下配置：数据观测(data observer)，属性和方法的运算，watch/event时间回调。然而，挂载阶段还没开始，$el属性目前不可见
-- beforeMount 在挂载开始之前被调用，相关的render函数首次被调用
-- mounted el被新创建的vm $el替换，并挂载到实例上去之后调用该钩子
-- beforeUpdate 数据更新时调用，发生虚拟DOM重新渲染和打补丁之前。你可以在这个钩子进一步更改状态，这不会触发附加的重渲染过程。
-- updated 由于数据更改导致的虚拟DOM重新渲染和打补丁，在这之后会调用钩子。当这个钩子被调用时，组件DOM已经更新，所以你现在可以执行依赖于DOM的操作，然而大多数情况下，你应该避免在此期间更改状态，因为可能会导致更新无限循环。该钩子在服务端期间不被调用。
-- beforeDestroy 实例销毁之前调用，在这一步，实例仍然完全可用
-- destroyed vue实例销毁后调用，调用后，vue实例指示的所有东西都会被解绑，所有的事件监听会被移除，所有的子实例也会被销毁，该钩子在服务端渲染期间不被调用。
+
+#### 初始化阶段
+- beforeCreate 实例初始化之后，this指向创建的实例，不能访问到data、computed、watch、methods上的方法和数据
+- created 实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到$el属性，$ref属性内容为空数组
+
+#### 挂载阶段
+
+在实例挂载前，先判断有无el对象，判断是否使用了模板；
+如果使用了模板，则按照编译模板的方法去做，如果没有则把el控制的视图区域当作模板来渲染。
+
+- beforeMount 在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数
+- mounted 实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问
+
+#### 更新阶段
+- beforeUpdate 响应式数据更新时调用，发生在虚拟DOM打补丁之前
+- updated 虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作
+
+#### 销毁阶段
+- beforeDestroy 实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例
+- destroyed 实例销毁后调用，调用后，Vue 实例指示的所有东西都会解绑定，所有的事件监听器会被移除，所有的子实例也会被销毁
