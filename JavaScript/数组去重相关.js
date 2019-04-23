@@ -10,18 +10,17 @@ var uniqueArr = Array.from(new Set(arrs));
 // 2. 使用 includes或者indexOf同理
 
 function getUniqueArr(arrs) {
-    var result = [];
-    for(let i = 0; i < arrs.length; i++) {
-        // if (result.indexOf(arrs[i] === -1))
-        if (!result.includes(arrs[i])) {
-            result.push(arr[i]);
-        }
+  var result = [];
+  for (let i = 0; i < arrs.length; i++) {
+    // if (result.indexOf(arrs[i] === -1))
+    if (!result.includes(arrs[i])) {
+      result.push(arr[i]);
     }
-    return result;
+  }
+  return result;
 }
 
-// 3. 
-
+// 3.
 
 /* 获取数组中重复出现的数字 */
 
@@ -32,7 +31,7 @@ var arr = [1, 1, 2, 3, 4, 4, 5, 3, 3];
 function getWith(arr) {
   var arr = arr.sort();
   var result = [];
-  for(let i = 0; i < arr.length; i++) {
+  for (let i = 0; i < arr.length; i++) {
     if (!result.includes(arr[i]) && arr[i] == arr[i + 1]) {
       result.push(arr[i]);
     }

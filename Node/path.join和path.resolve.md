@@ -1,6 +1,6 @@
 ## Path
 
-### path.join() 拼接路径
+### os.path.join() 拼接路径
 
 假设当前路径__dirname为/Volumes/HDD/Workspace/koa2-api/routes/
 // /Volumes/HDD/Workspace/koa2-api/routes/public/upload 
