@@ -1,3 +1,7 @@
+### 参考文章
+
+[彻底理解Node.js中的Buffer](https://cnodejs.org/topic/5cbdc8eda86ae80ce64b20ee)
+
 ### Buffer结构
 
 Buffer是一个类似Array的对象，它的元素为16进制的两位数，即0到255的数值。

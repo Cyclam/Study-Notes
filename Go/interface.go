@@ -1,49 +1,37 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
-type Fruitable interface {
-	eat()
-}
-
-type Banana struct {
+type People struct {
 	name string
-}
-type Apple struct {
-	name string
+	age int
 }
 
-func (a *Apple) eat() {
-	fmt.Println("eating apple")
+type Men interface {
+	sayHi()
 }
 
-func (b *Banana) eat() {
-	fmt.Println("eating banana")
+func (p *People) sayHi() {
+	fmt.Println(p.name)
 }
 
-type Fruit struct {
-	Banana // 匿名类型
-	Apple *Apple
-	name string
+func test(t Men) {
+	t.sayHi()
 }
 
-func (f *Fruit) want() {
-	fmt.Println("I like")
-	fmt.Println(f)
-
-	// 直接调用 Fruit结构体Apple的类型必须设为指针类型 否则只能用下面这种链式写法
-	f.eat() // eating banana
-	f.Apple.eat() // eating apple
-}
-
-
+// 如果方法的接收者是值类型，无论调用者是对象还是对象指针，修改的都是对象的副本，不影响调用者；
+// 如果方法的接收者是指针类型，则调用者修改的是指针指向的对象本身。
 func main() {
-	var f1 = Fruit{Banana{name: "b"}, &Apple{name: "a"}, "Apple"}
-	f1.want()
-	fmt.Println("=================")
-	var f Fruitable
-	// Fruit does not implement Fruitable (eat method has pointer receiver)
-	f2 := &Fruit{Banana{name: "b"}, &Apple{name: "a"}, "Apple"}
-	f = f2
-	f.eat() // eating banana 匿名字段Banana字段具有更高优先级 首先从Fruitable里寻找eat方法，没有则从匿名字段Banana字段里找
+	man := &People{"tom", 18}
+	man.sayHi()
+
+	var t Men
+	t = man
+	t.sayHi()
+
+	fmt.Println("=========")
+	test(t) // t 本身是一个Men接口类型
+	test(man) // man 实现了Men接口 所以可以被复制给一个Men类型的变量
 }
