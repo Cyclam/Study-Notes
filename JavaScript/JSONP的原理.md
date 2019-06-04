@@ -8,7 +8,7 @@ Web页面上调用js文件时则不受跨域的影响（不仅如此，我们还
 
 ```js
 var handler = function(data) {
-    console.log(data.name); // "Jordan"
+  console.log(data.name); // "Jordan"
 }
 
 var url = 'http://www.mysite.com/api?id=19348932495754&callback=handler' // 指定ID和callback
