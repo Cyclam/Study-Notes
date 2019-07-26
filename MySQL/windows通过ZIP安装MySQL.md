@@ -39,6 +39,21 @@ port=3306
 
 或者cmd进入到mysql安装目录bin，如`E:\mysql-5.7.20\bin`，输入`mysqld --console开启mysql服务`
 
+或者用以下方法
+输入mysqld install回车运行，出现安装成功就可以了。
+输入net start mysql 启动mysql （或打开windows服务手动启动mysql）
+要在bin目录下手动初始化data目录
+
+cd到bin目录下先初始化
+
+- mysqld --initialize-insecure自动生成无密码的root用户，
+
+- mysqld --initialize自动生成带随机密码的root用户
+
+这里选择 mysqld --initialize-insecure 
+
+初始化后再运行net start mysql 成功启动mysql
+
 4. `net stop mysql` 关闭mysql服务
 
 ### tips
@@ -49,6 +64,7 @@ port=3306
 `winpty mysql -u root -p`
 - 修改密码：`set password for root@localhost = password('123456')`或者
 `update user set password=password(”xueok654123″) where user=’root’`
+或者`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密码';(8.x版本)`
 
 ### MAC OS mysql命令无效
 
