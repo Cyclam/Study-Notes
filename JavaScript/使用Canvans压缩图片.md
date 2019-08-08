@@ -4,7 +4,7 @@
  * @Author: Roger
  * @Date: 2019-05-29 11:57:30
  * @Last Modified by: Roger
- * @Last Modified time: 2019-05-29 11:57:58
+ * @Last Modified time: 2019-08-08 14:37:26
  * @Description: canvas图片压缩
  */
 export default function compressImage (file, cb, compression = true) {
@@ -22,8 +22,8 @@ export default function compressImage (file, cb, compression = true) {
     var originWidth = this.width
     var originHeight = this.height
     // 最大尺寸限制
-    var maxWidth = 900
-    var maxHeight = 900000
+    const maxWidth = 900
+    const maxHeight = 900
     // 目标尺寸
     var targetWidth = originWidth
     var targetHeight = originHeight
@@ -46,7 +46,16 @@ export default function compressImage (file, cb, compression = true) {
     // 清除画布
     context.clearRect(0, 0, targetWidth, targetHeight)
     // 图片压缩
+    /**
+     * context.drawImage(img, dx, dy);
+     * context.drawImage(img, dx, dy, dWidth, dHeight);
+     * context.drawImage(img, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+    */
     context.drawImage(img, 0, 0, targetWidth, targetHeight)
+
+    // 把canvas画布转换成img图像 1. canvas.toDataURL()方法 2. canvas.toBlob() 方法
+    // canvas.toDataURL(mimeType, qualityArgument)
+    // canvas.toBlob(callback, mimeType, qualityArgument)
     // canvas转为blob并上传
     canvas.toBlob(blob => {
       const imageData = new FormData()
@@ -56,7 +65,7 @@ export default function compressImage (file, cb, compression = true) {
   }
   // 文件base64化，以便获知图片原始尺寸
   reader.onload = (e) => {
-    img.src = e.target.result
+    img.src = e.target.result // e.target.result就是图片的base64地址信息
   }
   // 选择的文件是图片
   if (fileRaw.type.indexOf('image') === 0) {
