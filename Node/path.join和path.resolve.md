@@ -12,24 +12,23 @@ console.log(path.resolve(__dirname, `../public/upload`), '+++++++++++++')
 os.path.join()函数用于路径拼接文件路径。 
 os.path.join()函数中可以传入多个路径：
 
-会从第一个以'/'开头的参数开始拼接，之前的参数全部丢弃。
+**会从第一个以'/'开头的参数开始拼接，之前的参数全部丢弃。**
 
 以上一种情况为先。在上一种情况确保情况下，若出现'./'开头的参数，会从'./'开头的参数的上一个参数开始拼接，'../'，则从上上个参数开始拼接。
 
-```javascript
+```js
 import os
-print("1:",os.path.join('aaaa','/bbbb','ccccc.txt'))
-print("2:",os.path.join('/aaaa','/bbbb','/ccccc.txt'))
-print("3:",os.path.join('aaaa','./bbb','ccccc.txt'))
+print("1:", os.path.join('aaaa','/bbbb','ccccc.txt'))
+print("2:", os.path.join('/aaaa','/bbbb','/ccccc.txt'))
+print("3:", os.path.join('aaaa','./bbb','ccccc.txt'))
 
 /bbbb\ccccc.txt
 /ccccc.txt
 aaaa\./bbb\ccccc.txt
 
+path.join('/foo', 'bar', 'baz/asdf', 'quux', '..') // '/foo/bar/baz/asdf' 
+
 ```
-
-### os.path.resolve()
-
 
 ### path.resolve() 将相对路径转为绝对路径
 
@@ -38,7 +37,7 @@ aaaa\./bbb\ccccc.txt
 const dir = path.resolve(__dirname, `../public/upload`);
 **ps: // 从右往左 返回值都不带尾部的斜杠 忽略非字符串的参数**
 
-```javascript
+```js
 path.resolve('/foo/bar', './baz')
 // '/foo/bar/baz'
 
@@ -65,3 +64,17 @@ console.log(url)
 // $ pwd
 // $ /tmp/subfile
 ```
+### 例子
+
+``` js
+let myPath = path.join(__dirname,'/img/so'); //D:\myProgram\test\img\so 
+let myPath2 = path.join(__dirname,'./img/so'); //D:\myProgram\test\img\so 
+let myPath3 = path.resolve(__dirname,'/img/so'); // D:\img\so
+let myPath4 = path.resolve(__dirname,'./img/so'); // D:\myProgram\test\img\so
+console.log(__dirname); //D:\myProgram\test 
+console.log(myPath); //D:\myProgram\test\img\so 
+console.log(myPath2); //D:\myProgram\test\img\so 
+console.log(myPath3); //D:\img\so<br> 
+console.log(myPath4); //D:\myProgram\test\img\so
+
+````
