@@ -27,11 +27,10 @@ func main() {
 	man := &People{"tom", 18}
 	man.sayHi()
 
-	var t Men
-	t = man
+	var t Men = man // 这个赋值过程使得接口实例中保存了用户自定义类型实例。
 	t.sayHi()
 
 	fmt.Println("=========")
 	test(t) // t 本身是一个Men接口类型
-	test(man) // man 实现了Men接口 所以可以被复制给一个Men类型的变量
+	test(man) // man 实现了Men接口 所以可以被赋值给一个Men类型的变量
 }

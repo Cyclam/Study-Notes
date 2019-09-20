@@ -50,3 +50,32 @@ Unlock: 2
 Lock: 3
 Unlock: 3
 ```
+
+```go
+import (
+	"sync"
+	"fmt"
+	"time"
+)
+
+func main() {
+	var mutex sync.Mutex
+	count := 0
+	
+	for r := 0; r < 5; r++ {
+		go func() {
+			// 开始上锁
+			mutex.Lock()
+			count += 1
+			// 如果不对该 goroutine 加锁，此时并发条件下打印出来的值有可能是乱序的，而不是依次1、2、3、4...打印出来
+			// 加锁条件下阻塞，后一个 goroutine 会等待前面的 goroutine 解锁才可进行下一步操作
+			fmt.Println(count)
+			mutex.Unlock()
+			// 解锁完毕
+		}()
+	}
+
+	time.Sleep(time.Second)
+	fmt.Println("the count is : ", count)
+}
+```

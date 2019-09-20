@@ -56,15 +56,22 @@ cd到bin目录下先初始化
 
 4. `net stop mysql` 关闭mysql服务
 
+5. 环境变量  
+安装完输入密码会提示 `Can't connect to MySQL server on 'localhost' (10061) after Installation`， 需要到设备管理器开启服务才行
+
+选中系统变量中的 `path`，在path值开头处输入 mysql 安装目录
+`E:\mysql-5.7.20\bin`
+
 ### tips
 - 按照此步骤`my.ini`文件务必请放在bin目录下，放在mysql根目录下会报错
 - 安装之前data文件夹必须为空，报错后可查看data目录下的日志文件DESKTOP-OQOAPS8.err
 - 需要重新安装先用sc delete mysql（服务名称）命令卸载服务，清空data文件夹后执行安装命令
-- git bash 登录mysql
-`winpty mysql -u root -p`
-- 修改密码：`set password for root@localhost = password('123456')`或者
-`update user set password=password(”xueok654123″) where user=’root’`
-或者`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密码';(8.x版本)`
+- git bash 登录mysql `winpty mysql -u root -p`
+- 修改密码：
+`set password for root@localhost = password('123456')` OR
+`update user set password=password(”xueok654123″) where user=’root’` OR
+`ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '你的密码';(8.x版本)` OR
+`ALTER USER root@localhost identified by '你的密码'; 若出现OK，则说明你修改成功`
 
 ### MAC OS mysql命令无效
 

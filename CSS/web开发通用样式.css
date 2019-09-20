@@ -1,0 +1,55 @@
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #f5f5f5;
+}
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #e3e3e3;
+}
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 10px;
+}
+
+body {
+  /* 使用click会出现绑定点击区域闪一下的情况，解决：给该元素一个样式如下 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 禁止用户选中文字 */
+  -webkit-user-select: none;
+  /* 禁止保存或拷贝图像 */
+  -webkit-touch-callout: none;
+  /* 禁止文本缩放，当移动设备横竖屏切换时，文本的大小会重新计算，进行相应的缩放 */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* IE10 叉号 */
+input:-ms-clear{ display: none; }
+
+a, img {
+  -webkit-touch-callout: none; /* 禁止长按链接与图片弹出菜单 */
+}
+
+/* 消除transition闪屏 使用css3动画的时尽量利用3D加速，从而使得动画变得流畅。动画过程中的动画闪白可以通过 backface-visibility 隐藏。 */
+
+.ani-transform {
+  /*设置内嵌的元素在 3D 空间如何呈现：保留 3D*/
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+  /*（设置进行转换的元素的背面在面对用户时是否可见：隐藏）*/
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.scroll {
+  overflow: auto;
+  /* 苹果设备 div 滑动效果顺滑 */
+  -webkit-overflow-scrolling: touch;
+}

@@ -78,7 +78,7 @@
 
 3. flex + align-items
 
-.parent{
+.parent {
     display: flex;
     align-items: center;
 }
@@ -104,7 +104,7 @@
     verticle-align: middel;
 }
 .child {
-    margin: aruto;
+    margin: auto;
 }
 
 2. absolute + transform
