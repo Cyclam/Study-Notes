@@ -23,7 +23,7 @@
 const ui = SwaggerUIBundle({
     url: "./swagger.yml", // 指定默认显示的文档
     // url: 'swagger.json', // 也可以使用json格式 一般书写采用yml或者yaml
-	// url: 'swagger.yaml',
+	  // url: 'swagger.yaml',
     dom_id: '#swagger-ui',
     deepLinking: true,
     presets: [

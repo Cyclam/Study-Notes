@@ -173,7 +173,7 @@ Tokens能够创建与其它程序共享权限的程序。例如，能将一个�
 Having our API just serve data, we can also make the design choice to serve assets from a CDN. This eliminates the issues that CORS brings up after we set a quick header configuration for our application.
 
 只要用户有一个通过了验证的token，数据和资源就能够在任何域上被请求到。
-`Access-Control-Allow-Origin: *`       
+`Access-Control-Allow-Origin: *`
 基于标准
 
 创建token的时候，你可以设定一些选项。我们在后续的文章中会进行更加详尽的描述，但是标准的用法会在JSON Web Tokens体现。
