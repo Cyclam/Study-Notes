@@ -12,7 +12,7 @@ nav {
   color: $nav-color;
 }
 
-//编译后
+// 编译后
 
 nav {
   width: 100px;

@@ -27,9 +27,9 @@
 `touch config`
 添加以下内容：
 
-``` javascript
+``` sh
 # gitlab
-Host gitlab.com (这里需要替换成公司的gitlab域名，如：code@xxxx.com)
+Host gitlab.com (这里需要替换成公司的gitlab域名，如：code@xxxx.com, 也可以 *gitlab.com)
   Port 59898 (配置端口)
   HostName gitlab.com
   PreferredAuthentications publickey
