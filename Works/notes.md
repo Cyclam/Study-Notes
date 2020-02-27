@@ -56,28 +56,10 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 1. Emmet 🌟
 2. SideBarEnhancements(侧边栏增强插件🌟)
 3. Terminal(控制台呼出插件，快捷键：ctrl+shift+T)
-4.  SublimeCodeIntel(代码提示插件)， 装上后还不能直接使用，查了一下原因要配置，你可以点击 Preferences->Browse Packages->SublimeCodeIntel然后添加一个.codeintel文件夹再再在文件夹里面添加一个config文件（Windows创建.codeintel文件夹需要输入.codeintel.）config文件配置：
-
-``` javascript
-{
-  "JavaScript": {
-    "javascriptExtraPaths": []
-  },
-  "Ruby": {
-    "ruby": "/usr/bin/ruby",
-    "rubyExtraPaths": []
-  },
-  "Python": {
-    "python": '/usr/bin/python',
-    "pythonExtraPaths": []
-  },
-}
-```
-
-5. Sublime-HTMLPrettify(代码排版插件，安装完按快捷键ctrl+shift+h 一键格式化代码)
-6. Autoprefixer(CSS3前缀补充插件，使用方法：在输入CSS3属性后按Tab键)
-7. AutoFileName(文件路径自动提示🌟)
-8. SublimeLinter(安装完这个插件，还需要独立安装组件)
+4. Sublime-HTMLPrettify(代码排版插件，安装完按快捷键ctrl+shift+h 一键格式化代码)
+5. Autoprefixer(CSS3前缀补充插件，使用方法：在输入CSS3属性后按Tab键)
+6. AutoFileName(文件路径自动提示🌟)
+7. SublimeLinter(安装完这个插件，还需要独立安装组件)
 
 ##### VS Code
 
@@ -89,28 +71,6 @@ Ctrl+`打开控制台或者View->Show Console菜单打开命令行
 5. Vetur(vue代码高亮🌟)
 6. Bookmarks(Mark lines and jump to them 快捷键切换: cmd + alt + k 🌟)
 7. Vscode-fileheader(生成文件头注释 自动更新修改时间🌟)
-
-#### JavaScript 语法检查
-
-- 安装 SublimeLinter-jshint
-为了让 JavaScript 代码有语法检查，我们安装`SublimeLinter-jshint `  
-同样的方法，我们安装 SublimeLinter-jshint  
-按下 Ctrl+Shift+p 进入 Command Palette  
-输入install进入 Package Control: Install Package  
-输入`SublimeLinter-jshint`进行安装.
-- 在插件开始工作之前，我们必须再看一下上述插件的安装说明，通过 SublimeLinter-jshint 的说明 我们可以看到，这个组件依赖于 nodeJS 下的 jshint，所以我们安装 nodeJS 环境和 nodeJS 下的 jshint。
-1. 安装 Node.js
-2. 通过 npm 安装jshint
-- 在命令行下输入如下代码，完成安装`npm install -g jshint`
-
-#### CSS 语法检查
-
-- 安装 SublimeLinter-csslint
-- 同样的方法，输入`SublimeLinter-csslint`。进行安装.
-- 在命令行中输入`npm install -g csslint`
-> 参考文档：[代码校验工具 SublimeLinter 的安装与使用](https://gaohaoyang.github.io/2015/03/26/sublimeLinter/)
-
-#### 搭建好环境后熟悉业务流程
 
 #### 使用Fiddlers或者Charles抓包工具
 测试环境下，使用抓包工具，截取网络资源，使用本地修改的静态资源替换  
@@ -175,3 +135,13 @@ JENKINS_GROUP=root
 - 执行全部或选中的语句(execute all or selection) ctrl+shift+enter
 - 查看执行计划(explain current statement) ctrl+alt+x
 - 注释 --加空格，如 –- select * from table 或者直接在执行语句前面加`#`加空格即可
+
+
+### Git 仓库大小写敏感问题
+
+Q: windows下修改文件夹 tools => Tools 实际上并没有在线上仓库中体现
+
+所有我们进行以下操作：
+`git config core.ignorecase false` // 保持大小写敏感
+`git rm --cached src/components/tools` // 移除小写文件夹目录
+`git config core.ignorecase true` // 再恢复大小写不敏感 
