@@ -32,7 +32,6 @@ func Balance() int {
 func main() {
 	// 最多只有一个goroutine在同一时刻访问一个共享变量
 	go Balance()
-
 	// go Deposit(100)
 	go Deposit(10)
 	go Deposit(10)
@@ -46,3 +45,15 @@ func main() {
 	go Deposit(10)
 	time.Sleep(1 * time.Second)
 }
+
+// 0
+// 10
+// read 10 上一个写入完毕释放锁之后被立即读取
+// 20
+// 30
+// 40
+// 50
+// 60
+// 70
+// 80
+// 90
