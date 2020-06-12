@@ -1,5 +1,5 @@
 abstract class SalaryCalculator {
-  int calculateSalary();
+  int calculateSalary(); // 抽象类只定义不实现
 }
 class Contract implements SalaryCalculator {
   int empId;
@@ -14,7 +14,7 @@ class Permanent implements SalaryCalculator {
   Permanent(this.empId, this.basicpay, this.bonus);
   int calculateSalary() => this.basicpay + this.bonus;
 }
-
+// int 可以省略 由系统推断
 int totalExpense(List<SalaryCalculator> s) {
   var expense = 0;
   for (var item in s) {
@@ -25,6 +25,8 @@ int totalExpense(List<SalaryCalculator> s) {
 void main () {
   var pemp1 = Contract(1, 3000);
   var pemp2 = Permanent(2, 3000, 15000);
+  var pemp3 = Permanent(3, 5000, 10000);
   List<SalaryCalculator> employees = [pemp1, pemp2];
-  print(totalExpense(employees));
+  print(totalExpense(employees)); // 21000
+  print(pemp3.calculateSalary()); // 15000
 }
