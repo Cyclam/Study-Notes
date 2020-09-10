@@ -45,5 +45,5 @@ func main() {
 	// Fruit does not implement Fruitable (eat method has pointer receiver)
 	f2 := &Fruit{Banana{name: "b"}, &Apple{name: "a"}, "Apple"}
 	f = f2
-	f.eat() // eating banana 匿名字段Banana字段具有更高优先级 首先从Fruitable里寻找eat方法，没有则从匿名字段Banana字段里找
+	f.eat() // eating banana 匿名字段 Banana 字段具有更高优先级 首先从 Fruitable 里寻找 eat 方法，没有则从匿名字段 Banana 字段里找
 }
