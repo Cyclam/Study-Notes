@@ -15,6 +15,7 @@ type Men interface {
 
 func (p *People) sayHi() {
 	fmt.Println(p.name)
+	p.age++
 }
 
 func test(t Men) {
@@ -26,6 +27,7 @@ func test(t Men) {
 func main() {
 	man := &People{"tom", 18}
 	man.sayHi()
+	fmt.Println(man.age)
 
 	var t Men = man // 这个赋值过程使得接口实例中保存了用户自定义类型实例。
 	t.sayHi()
