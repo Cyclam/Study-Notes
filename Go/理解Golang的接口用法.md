@@ -65,7 +65,7 @@ func (p President) CalculateSalary() int {
 func totalExpense(s []SalaryCalculator) {
 	expense := 0
 	for _, v := range s {
-		expense = expense + v.CalculateSalary()
+		expense += v.CalculateSalary()
 	}
 	fmt.Printf("总开支 $%d", expense)
 }
