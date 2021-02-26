@@ -1,0 +1,3 @@
+现在又学了 slice, map 和函数。在理解 panic 和 recover 机制上花了许多时间，找了几个教程包括官方文档都没讲清楚。最后终于找到一个：[Understanding Defer, Panic and Recover](https://www.ardanlabs.com/blog/2013/06/understanding-defer-panic-and-recover.html)。现在总算是明白了。里面有一个比喻非常好：调用 panic 就好像推倒一块多米诺骨牌，函数会逐层停止执行，直到 main 函数，然后程序崩溃。而 recover 就好像是把其中一块骨牌抽走，把程序崩溃的过程在 recover 处停止。所以 recover 之后的代码还能够正常执行。
+
+这篇文章里还讲了使用 panic, defer, recover 的一些最佳实践，比如为了让 main 函数可以接收到 panic error，defer 要传 &err，然后在 defer 函数里给 *err 赋 recover 接收到的 Error。看来 Go 还是有最佳实践的，只不过需要应用的东西不同了。

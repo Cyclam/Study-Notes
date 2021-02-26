@@ -15,5 +15,3 @@
 则执行以下语句：  
 　　`git pull origin master`  
 先把远程服务器github上面的文件拉先来，再`push`上去。
-
-### 程序本身就是一个字节序列
