@@ -52,7 +52,7 @@ function Child() {
   this.age = 18;
 }
 
-// 每次都要讲prototype敲一遍，比较麻烦
+// 每次都要将prototype敲一遍，比较麻烦
 Child.prototype = new Parent();
 Child.prototype.constructor = Child;
 Child.prototype.getAge = function() {
