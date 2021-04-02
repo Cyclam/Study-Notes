@@ -47,20 +47,6 @@ Host github.com
 表示成功连接上github了，连接gitlab也是一样的，你可以在gitlab上新建一个test测试项目，然后自己测试看看是否成功。
  
 ### 编辑器（推荐使用VS Code）
-#### Sublime Text
-
-首先是安装包管理器Package Control，SublimeText3的指令已经更新了，SublimeText2更新上来的童鞋注意下 
-Ctrl+`打开控制台或者View->Show Console菜单打开命令行
-> import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
-
-1. Emmet 🌟
-2. SideBarEnhancements(侧边栏增强插件🌟)
-3. Terminal(控制台呼出插件，快捷键：ctrl+shift+T)
-4. Sublime-HTMLPrettify(代码排版插件，安装完按快捷键ctrl+shift+h 一键格式化代码)
-5. Autoprefixer(CSS3前缀补充插件，使用方法：在输入CSS3属性后按Tab键)
-6. AutoFileName(文件路径自动提示🌟)
-7. SublimeLinter(安装完这个插件，还需要独立安装组件)
-
 ##### VS Code
 
 1. One Dark Pro主题(目前一直在用的主题🌟)
