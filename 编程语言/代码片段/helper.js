@@ -156,13 +156,13 @@ export const toBlob = (base64, fileType) => {
   while (n--) {
     u8arr[n] = bytes.charCodeAt(n);
   }
-  return new Blob([u8arr], {type: fileType});
+  return new Blob([u8arr], { type: fileType });
 };
 
 /**
  * 复制
  */
-export function handleCopyLink () {
+export function handleCopyLink() {
   const input = document.createElement('input')
   const activityUrl = `download link`
   input.setAttribute('value', activityUrl)
@@ -173,4 +173,109 @@ export function handleCopyLink () {
     this.$message.success('复制成功！')
   }
   document.body.removeChild(input)
+}
+
+/**
+ * 对数组对象去重
+ */
+var input = [
+  { key: '01', value: '乐乐' },
+  { key: '02', value: '博博' },
+  { key: '03', value: '淘淘' },
+  { key: '04', value: '哈哈' },
+  { key: '01', value: '乐乐' }
+]
+
+var uniqueKey = []
+var output = input.reduce((a, b) => {
+  if (!uniqueKey.includes(b.key)) {
+    uniqueKey.push(b.key)
+    a.push(b)
+  }
+  return a
+}, [])
+
+let output = []
+const hash = {}
+output = roleList.reduce((item, next) => {
+  if (!hash[next.key]) {
+    hash[next.key] = true && item.push(next)
+  }
+  return item
+}, [])
+
+// [
+//   { key: '01', value: '乐乐' },
+//   { key: '02', value: '博博' },
+//   { key: '03', value: '淘淘' },
+//   { key: '04', value: '哈哈' }
+// ]
+
+/**
+ * 深拷贝
+ * 1. 使用 JSON.parse(JSON.Stringify(xxx)) 缺点是无法实现对对象中方法的深拷贝，会显示为 undefined
+ * 2. Reflect
+ * 3. 递归所有属性
+ */
+function deepClone(obj) {
+  // 初始化开辟空间
+  let objClone = Array.isArray(obj) ? [] : {};
+  // 判断是对象 因为 typeof null === 'object'
+  if (obj && typeof obj === "object") {
+    for (key in obj) {
+      // 判断是否是自己的属性方法，而不是原型属性方法
+      if (obj.hasOwnProperty(key)) {
+        // 判断ojb子元素是否为对象，如果是，递归复制
+        if (obj[key] && typeof obj[key] === "object") {
+          objClone[key] = deepClone(obj[key]);
+        } else {
+          // 如果不是，简单复制
+          objClone[key] = obj[key];
+        }
+      }
+    }
+  }
+  return objClone;
+}
+
+/**
+ * 懒加载
+ */
+let imgList = [...document.querySelectorAll('img')]
+let num = imgList.length
+
+export const lazyLoad = (function () {
+  let count = 0
+  return function () {
+    let deleteIndexList = []
+    imgList.forEach((img, index) => {
+      let rect = img.getBoundingClientRect()
+      if (rect.top < window.innerHeight) {
+        img.src = img.dataset.src
+        deleteIndexList.push(index)
+        count++
+        if (count === num) {
+          document.removeEventListener('scroll', lazyLoad)
+        }
+      }
+    })
+    imgList = imgList.filter((_, index) => !deleteIndexList.includes(index))
+  }
+})()
+
+/***************************/
+
+let imgList = [...document.querySelectorAll('img')]
+export const lazyLoad = function () {
+  let observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.intersectionRatio > 0) {
+        entry.target.src = entry.target.dataset.src
+        observer.unobserve(entry.target)
+      }
+    })
+  })
+  imgList.forEach(img => {
+    observer.observe(img)
+  })
 }
