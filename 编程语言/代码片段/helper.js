@@ -243,6 +243,7 @@ function deepClone(obj) {
  */
 let imgList = [...document.querySelectorAll('img')]
 let num = imgList.length
+var viewHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight
 
 export const lazyLoad = (function () {
   let count = 0
@@ -250,7 +251,7 @@ export const lazyLoad = (function () {
     let deleteIndexList = []
     imgList.forEach((img, index) => {
       let rect = img.getBoundingClientRect()
-      if (rect.top < window.innerHeight) {
+      if (rect.top < viewHeight) {
         img.src = img.dataset.src
         deleteIndexList.push(index)
         count++
