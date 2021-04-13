@@ -7,6 +7,9 @@ export const secondToHMS = (seconds) => {
 }
 
 export const secondToHMS = (millisecond) => {
+  function fixedZero (val) {
+    return val * 1 < 10 ? `0${val}` : val
+  }
   const hours = 60 * 60 * 1000
   const minutes = 60 * 1000
 

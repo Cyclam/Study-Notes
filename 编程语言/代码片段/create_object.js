@@ -31,6 +31,7 @@ var s = new People("Jordan", 39);
 s.say();
 
 /* 3、原型模式 */
+// h.__proto__.constructor => Human   Human.prototype.constructor => Human
 function Human(name, age) {
   this.name = name;
   this.age = age;
