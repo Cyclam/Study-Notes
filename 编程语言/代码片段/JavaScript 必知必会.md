@@ -11,3 +11,9 @@ prefetch: 预加载，浏览器空闲时加载数据
 
 - 如何计算时间复杂度 [算法的时间与空间复杂度](https://zhuanlan.zhihu.com/p/50479555)
 - 按位取反 [按位取反，为什么~2 = -3?](https://github.com/LinDaiDai/niubility-coding-js/issues/32)
+
+### 精选博主
+
+[Koala](https://github.com/koala-coding/goodBlog) // Node js
+[LinDaiDai](https://github.com/LinDaiDai/niubility-coding-js) // js
+[labuladong](https://github.com/labuladong/fucking-algorithm) // 算法
