@@ -222,6 +222,9 @@ function deepClone(obj) {
   let objClone = Array.isArray(obj) ? [] : {};
   // 判断是对象 因为 typeof null === 'object'
   if (obj && typeof obj === "object") {
+    // 使用for..in 遍历对象时原理和查找[[Prototype]] 链类似，任何可以通过原型链访问到
+    // （并且是enumerable，参见第3 章）的属性都会被枚举。使用in 操作符来检查属性在对象
+    // 中是否存在时，同样会查找对象的整条原型链（无论属性是否可枚举）—— 摘自《你不知道的JavaScript上卷 第五章原型》
     for (key in obj) {
       // 判断是否是自己的属性方法，而不是原型属性方法
       if (obj.hasOwnProperty(key)) {
