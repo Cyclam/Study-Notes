@@ -6,7 +6,7 @@ var xhr = new XMLHttpRequest();
 xhr.timeout = 3000
 xhr.responseType = 'json'
 xhr.open("GET", "https://anapioficeandfire.com/api/characters/583", true);
-xhr.send();
+xhr.send(null); // 如果不需要发送请求体，则必须传null，因为这个参数在某些浏览器中是必需的。调用send()之后，请求就会发送到服务器。
 
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
@@ -23,7 +23,7 @@ xhr.onload = (e) => {
 }
 xhr.onerror = (e) => {}
 xhr.upload.onprogress = (e) => {} // 上传触发
-xhr.onprogress = (e) => { } // 下载触发
+xhr.onprogress = (e) => {} // 下载触发
 
 
 ```doc
